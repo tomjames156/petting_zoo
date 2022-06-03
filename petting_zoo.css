@@ -99,39 +99,40 @@ section, div#smaller_background{
     width: 96%;
 }
 
-section#projects{
-    width: 96%;
-    margin: 60px auto;
-}
-
 section#projects p{
     font-size: 1.2em;
     margin-bottom: 60px;
 }
 
-section#projects div{    
+#projects{
+    width: 96%;
+    margin: 60px auto;
+}
+
+#project-tiles{
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
-    flex: 25%;
-    justify-content: space-between;
-    row-gap: 15px;
+    gap: 10px
 }
 
-img.flex-image{
-    width: 22vw;
-    height: 205px;
-}
-
-section#projects div div{
+#project-tiles > div{
     position: relative;
+    flex: 24%;
 }
 
-section#projects div div div{
+div.project-name{
     position: absolute;
     top: 0;
-    padding: 10px;
-    color: #fff;
-    background-color: black;
+    padding: 5px;
+    color: white;
+    background: black;
+}
+
+.flex-image{
+    width: 100%;
+    height: 15vw
 }
 
 section#about{
@@ -170,7 +171,7 @@ p.title{
     color: gray;
 }
 
-p.about_person{
+p.about-person{
     font-size: 0.9em;
     line-height: 1.3em;
     margin-bottom: 5px;
@@ -205,8 +206,9 @@ section#contact-form{
     margin: 0 auto;
 }
 
-div#smaller_background{
+div#smaller-background{
     margin: 0 auto;
+    width: 96%;
 }
 
 button#send{
@@ -220,7 +222,7 @@ button#send{
     border: none;
 }
 
-div#smaller_background img{
+div#smaller-background img{
     width: 100%;
     height: auto;
 }
@@ -248,24 +250,26 @@ footer{
     background: none;
 }
 
-@media only screen and (max-width: 1000px){
-    section#projects > div{
-        display: flex;
-        flex: 50%;
-        flex-wrap: wrap;
-        gap: 10px;
-        height: auto;
-        text-align: center;
-        justify-content: space-between;
-    }    
-
-    img.flex-image{
-        width: 47%;
-        height: 300px;
+@media only screen and (max-width: 1000px){       
+    #project-tiles > div{
+        flex: 48%;
     }
+    
+    .flex-image{
+        height: 25vw;
+    }
+    
+    section#contact{
+        flex: 50%; 
+    }
+       
+    p.about-person{
+        width: 46vw;
+    }
+    
 }
 
-@media only screen and (max-width: 601px){
+@media only screen and (max-width: 600px){
     div#nav-links{
         display: none;
     } 
@@ -273,41 +277,30 @@ footer{
     div#home div span:nth-of-type(2){
         display: none;
     }
+
+    section#projects, section#about, section#contact-form, div#smaller-background{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #project-tiles{
+        flex-direction: column;
+    }
     
-    section#projects > div{
-        display: flex;
-        flex-wrap: wrap;
-        flex: 50%;
-        height: auto;
-        justify-content: space-between;
-        row-gap: 15px;
-        text-align: center;
+    .flex-image{
+        height: 50vw;
     }
-
+    
     section#contact{
+        flex-direction: column;
+        width: 90%;
         margin: 0 auto 80px auto;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        flex: 90%; 
-        flex-direction: row;
-        row-gap: 15px;
-        justify-content: space-between;
+        gap: 20px;
     }
-
-    p.about_person{
-        width: 47%;
+    
+    p.about-person{
+        width: 100%;
     }
-
-    img.flex-image{
-        width: 47%;
-        height: auto;
-    }
-
-    button.contact{
-        align-self: center;
-        width: 47%;
-        border: none;
-        padding: 10px;
-    }
+    
 }
